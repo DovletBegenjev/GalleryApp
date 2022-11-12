@@ -1,0 +1,13 @@
+export interface Painting {
+    nameOfPainting: string
+    yearOfPainting: string
+    linkToImage: string
+    painter_id: number
+    gallery_id: number
+    art_form: string
+    plot: string
+    style: string
+    technic: string
+    materials: string
+    size: string
+}
