@@ -8,8 +8,8 @@ import { Painter } from '../interface/painter'
   styleUrls: ['./painters.component.css']
 })
 export class PaintersComponent implements OnInit {
-  painters: Painter[] = [];
-  painter!: Painter
+  painters: any = [];
+  painter!: any
   error: string = ""
   succes: string = ""
 
@@ -20,22 +20,37 @@ export class PaintersComponent implements OnInit {
   }
 
   onGetPainters(): void {
-    this.painterService.getPainters().subscribe(
-      (responce: Painter[]) => this.painters = responce,
-      (error: any) => console.error(error),
-      //() => this.succes = "Done getting all painters"
-      () => console.log("Done getting all painters")
-    );
+    this.painterService.getPainters().subscribe({
+      next: (responce: any) => {
+        this.painters = responce
+        console.log(JSON.stringify(responce))
+      },
+      error: (error: any) => {
+        this.error = error
+        console.error(error)
+      },
+      complete: () => {
+        this.succes = "Done getting all painters"
+        console.log("Done getting all painters")
+      }
+    });
   }
 
   onGetPainter(): void {
-    this.painterService.getPainter().subscribe(
-      (responce: Painter) => this.painter = responce,
-      //(error: any) => this.error = error,
-      (error: any) => console.error(error),
-      () => console.log("Done getting all painters")
-      //() => this.succes = `Done getting painter with id = ${this.painters[0].id}`
-    )
+    this.painterService.getPainter().subscribe({
+      next: (responce: any) => {
+        this.painter = responce
+        console.log(JSON.stringify(responce))
+      },
+      error: (error: any) => {
+        this.error = error
+        console.error(error)
+      },
+      complete: () => {
+        this.succes = "Done getting all painters"
+        console.log(`Done getting painter with id = ${this.painter.data.id}`)
+      }
+    })
   }
 
   onShowAllPaintersButtonClick(): void {

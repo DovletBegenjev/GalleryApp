@@ -1,0 +1,18 @@
+<!-- <p>paintings works!</p> -->
+
+<ol>
+    <li *ngFor="let painting of paintings.data">
+        <!-- <p>id: {{painting.id}}</p> -->
+        <p>Название картины: {{painting.nameOfPainting}}</p>
+        <p>Год создания: {{painting.yearOfPainting}}</p>
+        <p>Автор: {{painting.painter_id}}</p>
+        <p>Место хранения: {{painting.gallery_id}}</p>
+        <p>Вид искусства: {{painting.art_form}}</p>
+        <p>Сюжет и объекты: {{painting.plot}}</p>
+        <p>Стиль: {{painting.style}}</p>
+        <p>Техника: {{painting.technic}}</p>
+        <p>Материалы: {{painting.materials}}</p>
+        <p>Размер: {{painting.size}}</p>
+        <img src="{{painting.linkToImage}}" alt="{{painting.nameOfPainting}}" title="{{painting.nameOfPainting}}" loading="lazy" width="20%">
+    </li>
+</ol>

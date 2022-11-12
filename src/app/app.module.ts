@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { PaintersComponent } from './painters/painters.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { PaintingsComponent } from './paintings/paintings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaintersComponent,
+    PaintingsComponent,
   ],
   imports: [
     BrowserModule,

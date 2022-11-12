@@ -1,29 +1,16 @@
-<p>painters works!</p>
+<!-- <p>painters works!</p> -->
 
 <!--<button type="button" name="ShowAllPaintersButton" (click)="onShowAllPaintersButtonClick()">Показать всех художников</button>-->
 
-<!--<ol>
-    <li *ngFor="let painter of painters | keyvalue">
-        <p>id: {{painter.id}}</p>
+<ol>
+    <li *ngFor="let painter of painters.data">
+        <!-- <p>id: {{painter.id}}</p> -->
         <p>Имя: {{painter.name}}</p>
         <p>Фамилия: {{painter.surname}}</p>
         <p>Дата рождения: {{painter.birthDate}}</p>
         <p>Место рождения: {{painter.placeOfBirth}}</p>
         <p>Жанр: {{painter.genre}}</p>
-        <p>{{painter | keyvalue}}</p>
-    </li>
-</ol>-->
-
-<!--<pre>
-    <code>
-        {{painters | json}}
-    </code>
-</pre>-->
-
-<ol>
-    <li *ngFor="let painter of painters | keyvalue">
-        <p *ngFor="let painte of painter | keyvalue">
-            <span>{{painte | keyvalue}}</span>
-        </p>
+        <p>Стиль: {{painter.style}}</p>
+        <img src="{{painter.picFileName}}" alt="{{painter.name}} {{painter.surname}}" title="{{painter.name}} {{painter.surname}}" loading="lazy">
     </li>
 </ol>
