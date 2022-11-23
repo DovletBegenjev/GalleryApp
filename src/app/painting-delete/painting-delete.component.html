@@ -1,0 +1,31 @@
+<div>
+    <label for="paintingID">Выберите картину для удаления: </label>
+    <select name="paintingID" id="paintingID">
+        <option *ngFor="let p of paintings.data" value="{{p.id}}">{{p.nameOfPainting}}</option>
+    </select>
+    <input type="submit" value="Удалить" (click)="onDeletePainting()">
+</div>
+
+<div *ngIf="success">
+    <p class="alert alert-success" role="alert">{{success}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>
+
+<div *ngIf="painting">
+    <!-- <p>id: {{painting.data.id}}</p> -->
+    <p>Название картины: {{painting.data.nameOfPainting}}</p>
+    <p>Год создания: {{painting.data.yearOfPainting}}</p>
+    <p>Художник: {{painter.data.name}} {{painter.data.surname}}</p>
+    <p *ngIf="painting.data.gallery_id">Место хранения: {{gallery.data.name}}; {{gallery.data.location}}; <a href="{{gallery.data.link}}">ссылка на музей {{gallery.data.name}}</a></p>
+    <p>Вид искусства: {{painting.data.art_form}}</p>
+    <p>Сюжет и объекты: {{painting.data.plot}}</p>
+    <p>Стиль: {{painting.data.style}}</p>
+    <p>Техника: {{painting.data.technic}}</p>
+    <p>Материалы: {{painting.data.materials}}</p>
+    <p *ngIf="painting.data.size">Размер: {{painting.data.size}}</p>
+    <img *ngIf="painting.data.linkToImage" src="{{painting.data.linkToImage}}" alt="{{painting.data.nameOfPainting}}"
+        title="{{painting.data.nameOfPainting}}" loading="lazy" width="20%">
+</div>

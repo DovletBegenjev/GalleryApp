@@ -1,16 +1,20 @@
-<!-- <p>painters works!</p> -->
+<!-- <button type="button" name="ShowAllPaintersButton" (click)="onShowAllPaintersButtonClick()">Показать всех художников</button> -->
 
-<!--<button type="button" name="ShowAllPaintersButton" (click)="onShowAllPaintersButtonClick()">Показать всех художников</button>-->
-
-<ol>
+<ol *ngIf="painters">
     <li *ngFor="let painter of painters.data">
+        <hr>
         <!-- <p>id: {{painter.id}}</p> -->
-        <p>Имя: {{painter.name}}</p>
-        <p>Фамилия: {{painter.surname}}</p>
-        <p>Дата рождения: {{painter.birthDate}}</p>
-        <p>Место рождения: {{painter.placeOfBirth}}</p>
-        <p>Жанр: {{painter.genre}}</p>
-        <p>Стиль: {{painter.style}}</p>
-        <img src="{{painter.picFileName}}" alt="{{painter.name}} {{painter.surname}}" title="{{painter.name}} {{painter.surname}}" loading="lazy">
+        <img *ngIf="painter.picFileName" src="{{painter.picFileName}}" alt="{{painter.name}} {{painter.surname}}"
+            title="{{painter.name}} {{painter.surname}}" loading="lazy">
+        <p><b>Имя:</b> {{painter.name}}</p>
+        <p><b>Фамилия:</b> {{painter.surname}}</p>
+        <p><b>Дата рождения:</b> {{painter.birthDate}}</p>
+        <p><b>Место рождения:</b> {{painter.placeOfBirth}}</p>
+        <p><b>Жанр:</b> {{painter.genre}}</p>
+        <p><b>Стиль:</b> {{painter.style}}</p>
     </li>
 </ol>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>

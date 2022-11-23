@@ -1,4 +1,46 @@
 <h1>{{ title }}</h1>
-<!-- <app-painters></app-painters> -->
-<app-paintings></app-paintings>
+
+<nav>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Художники
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a routerLink="/painters" class="link-dark dropdown-item">Все художники</a></li>
+            <li><a routerLink="/painter" class="link-dark dropdown-item">Выбрать художника</a></li>
+            <li><a routerLink="/painter/create" class="link-dark dropdown-item">Внести художника</a></li>
+            <li><a routerLink="/painter/patch" class="link-dark dropdown-item">Изменить данные о художнике</a></li>
+            <li><a routerLink="/painter/delete" class="link-dark dropdown-item">Удалить данные о художнике</a></li>
+        </ul>
+
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Картины
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a routerLink="/paintings" class="link-dark dropdown-item">Все картины</a></li>
+            <li><a routerLink="/painting" class="link-dark dropdown-item">Выбрать картину</a></li>
+            <li><a routerLink="/painting/create" class="link-dark dropdown-item">Внести картину</a></li>
+            <li><a routerLink="/painting/patch" class="link-dark dropdown-item">Изменить данные о картине</a></li>
+            <li><a routerLink="/painting/delete" class="link-dark dropdown-item">Удалить данные о картине</a></li>
+        </ul>
+
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Галереи
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a routerLink="/galleries" class="link-dark dropdown-item">Все галереи</a></li>
+            <li><a routerLink="/gallery" class="link-dark dropdown-item">Выбрать галерею</a></li>
+            <li><a routerLink="/gallery/create" class="link-dark dropdown-item">Внести галерею</a></li>
+            <li><a routerLink="/gallery/patch" class="link-dark dropdown-item">Изменить данные о галерее</a></li>
+            <li><a routerLink="/gallery/delete" class="link-dark dropdown-item">Удалить данные о галерее</a></li>
+        </ul>
+    </div>
+    <br>
+</nav>
+
+<br>
+
 <router-outlet></router-outlet>

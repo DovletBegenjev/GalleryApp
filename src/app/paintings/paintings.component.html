@@ -2,17 +2,18 @@
 
 <ol>
     <li *ngFor="let painting of paintings.data">
+        <hr>
         <!-- <p>id: {{painting.id}}</p> -->
-        <p>Название картины: {{painting.nameOfPainting}}</p>
-        <p>Год создания: {{painting.yearOfPainting}}</p>
-        <p>Автор: {{painting.painter_id}}</p>
-        <p>Место хранения: {{painting.gallery_id}}</p>
-        <p>Вид искусства: {{painting.art_form}}</p>
-        <p>Сюжет и объекты: {{painting.plot}}</p>
-        <p>Стиль: {{painting.style}}</p>
-        <p>Техника: {{painting.technic}}</p>
-        <p>Материалы: {{painting.materials}}</p>
-        <p>Размер: {{painting.size}}</p>
-        <img src="{{painting.linkToImage}}" alt="{{painting.nameOfPainting}}" title="{{painting.nameOfPainting}}" loading="lazy" width="20%">
+        <img *ngIf="painting.linkToImage" src="{{painting.linkToImage}}" alt="{{painting.nameOfPainting}}" title="{{painting.nameOfPainting}}" loading="lazy" width="20%">
+        <p><b>Название картины:</b> {{painting.nameOfPainting}}</p>
+        <p><b>Год создания:</b> {{painting.yearOfPainting}}</p>
+        <p><b>Автор:</b> {{painting.painter_id}}</p>
+        <p><b>Место хранения:</b> {{painting.gallery_id}}</p>
+        <p><b>Вид искусства:</b> {{painting.art_form}}</p>
+        <p><b>Сюжет и объекты:</b> {{painting.plot}}</p>
+        <p><b>Стиль:</b> {{painting.style}}</p>
+        <p><b>Техника:</b> {{painting.technic}}</p>
+        <p><b>Материалы:</b> {{painting.materials}}</p>
+        <p><b>Размер:</b> {{painting.size}}</p>
     </li>
 </ol>

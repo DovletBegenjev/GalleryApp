@@ -1,0 +1,17 @@
+.alert
+{
+    margin-right: 80%; 
+    margin-left: 20px; 
+    margin-top: 10px; 
+    text-align: center;
+}
+
+li
+{
+    margin-bottom: 10px;
+}
+
+label
+{
+    margin-left: 10px;
+}

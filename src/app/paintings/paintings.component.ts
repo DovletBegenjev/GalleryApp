@@ -34,21 +34,4 @@ export class PaintingsComponent implements OnInit {
       }
     });
   }
-
-  onGetPainting(): void {
-    this.paintingService.getPainting().subscribe({
-      next: (responce: any) => {
-        this.painting = responce
-        console.log(JSON.stringify(responce))
-      },
-      error: (error: any) => {
-        this.error = error
-        console.error(error)
-      },
-      complete: () => {
-        this.succes = "Done getting all painters"
-        console.log(`Done getting painter with id = ${this.painting.data.id}`)
-      }
-    })
-  }
 }

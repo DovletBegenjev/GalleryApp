@@ -1,4 +1,5 @@
 export interface Painting {
+    id?: number
     nameOfPainting: string
     yearOfPainting: string
     linkToImage: string

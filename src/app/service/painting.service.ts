@@ -16,7 +16,19 @@ export class PaintingService {
     return this.http.get<Painting[]>(`${this.apiURL}/paintings`)
   }
 
-  getPainting(): Observable<Painting> {
-    return this.http.get<Painting>(`${this.apiURL}/paintings/1`)
+  getPainting(id: number): Observable<Painting> {
+    return this.http.get<Painting>(`${this.apiURL}/paintings/${id}`)
+  }
+
+  createPainting(painting: Painting): Observable<Painting> {
+    return this.http.post<Painting>(`${this.apiURL}/paintings`, painting)
+  }
+
+  patchPainting(painting: Painting): Observable<Painting> {
+    return this.http.patch<Painting>(`${this.apiURL}/paintings/${painting.id}`, painting)
+  }
+
+  deletePainting(id: number): Observable<Painting> {
+    return this.http.delete<Painting>(`${this.apiURL}/paintings/${id}`)
   }
 }

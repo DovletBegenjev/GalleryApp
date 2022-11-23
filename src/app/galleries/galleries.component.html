@@ -1,0 +1,13 @@
+<ol *ngIf="galleries">
+    <li *ngFor="let gallery of galleries.data">
+        <hr>
+        <!-- <p>id: {{gallery.id}}</p> -->
+        <p><b>Название галереи:</b> {{gallery.name}}</p>
+        <p><b>Местонахождение:</b> {{gallery.location}}</p>
+        <a href="{{gallery.link}}" target="_blank">Сайт галереи "{{gallery.name}}"</a>
+    </li>
+</ol>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>

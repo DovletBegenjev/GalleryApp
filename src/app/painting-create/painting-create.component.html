@@ -1,0 +1,68 @@
+<div>
+    <label for="nameOfPainting">Название картины: </label>
+    <input id="nameOfPainting" type="text" placeholder="Название картины">
+
+    <br>
+
+    <label for="yearOfPainting">Год создания: </label>
+    <input id="yearOfPainting" type="text" placeholder="Год создания">
+
+    <br>
+
+    <label for="painter_id">Выберите художника: </label>
+    <select name="painter_id" id="painter_id">
+        <option *ngFor="let p of painters.data" value="{{p.id}}">{{p.name}} {{p.surname}}</option>
+    </select>
+
+    <br>
+
+    <label for="gallery_id">Выберите место хранения: </label>
+    <select name="gallery_id" id="gallery_id">
+        <option *ngFor="let g of galleries.data" value="{{g.id}}">{{g.name}}</option>
+    </select>
+
+    <br>
+
+    <label for="art_form">Вид искусства: </label>
+    <input id="art_form" type="text" placeholder="Вид искусства">
+
+    <br>
+
+    <label for="plot">Сюжет и объекты: </label>
+    <input id="plot" type="text" placeholder="Сюжет и объекты">
+
+    <br>
+
+    <label for="style">Стиль: </label>
+    <input id="style" type="text" placeholder="Стиль">
+
+    <br>
+
+    <label for="technic">Техника: </label>
+    <input id="technic" type="text" placeholder="Техника">
+
+    <br>
+
+    <label for="materials">Материалы: </label>
+    <input id="materials" type="text" placeholder="Материалы">
+
+    <br>
+
+    <label for="size">Размер: </label>
+    <input id="size" type="text" placeholder="Размер">
+
+    <br>
+
+    <label for="linkToImage">Ссылка на изображение: </label>
+    <input id="linkToImage" type="text" placeholder="Ссылка на изображение">
+
+    <input type="submit" value="Внести" (click)="onCreatePainting()">
+</div>
+
+<div *ngIf="success">
+    <p class="alert alert-success" role="alert">{{success}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>

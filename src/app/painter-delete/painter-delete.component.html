@@ -1,0 +1,27 @@
+<div>
+    <label for="painterID">Выберите художника для удаления: </label>
+    <select name="painterID" id="painterID">
+        <option *ngFor="let p of painters.data" value="{{p.id}}">{{p.name}} {{p.surname}}</option>
+    </select>
+    <input type="submit" value="Удалить" (click)="onDeletePainter()">
+</div>
+
+<div *ngIf="success">
+    <p class="alert alert-success" role="alert">{{success}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>
+
+<div *ngIf="painter">
+    <!-- <p>id: {{painter.data.id}}</p> -->
+    <p>Имя: {{painter.data.name}}</p>
+    <p>Фамилия: {{painter.data.surname}}</p>
+    <p>Дата рождения: {{painter.data.birthDate}}</p>
+    <p>Место рождения: {{painter.data.placeOfBirth}}</p>
+    <p>Жанр: {{painter.data.genre}}</p>
+    <p>Стиль: {{painter.data.style}}</p>
+    <img src="{{painter.data.picFileName}}" alt="{{painter.data.name}} {{painter.data.surname}}"
+        title="{{painter.data.name}} {{painter.data.surname}}" loading="lazy">
+</div>

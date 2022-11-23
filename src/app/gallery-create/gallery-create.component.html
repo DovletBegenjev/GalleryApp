@@ -1,0 +1,26 @@
+<div>
+    <label for="name">Название галереи: </label>
+    <input id="name" type="text" placeholder="Название галереи">
+
+    <br>
+
+    <label for="location">Местонахождение: </label>
+    <input id="location" type="text" placeholder="Местонахождение">
+
+    <br>
+
+    <label for="link">Сайт галереи: </label>
+    <input id="link" type="text" placeholder="Сайт галереи">
+
+    <br>
+
+    <input type="submit" value="Внести" (click)="onCreateGallery()">
+</div>
+
+<div *ngIf="success">
+    <p class="alert alert-success" role="alert">{{success}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>

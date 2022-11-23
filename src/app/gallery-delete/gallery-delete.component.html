@@ -1,0 +1,22 @@
+<div>
+    <label for="galleryID">Выберите галерею для удаления: </label>
+    <select name="galleryID" id="galleryID">
+        <option *ngFor="let g of galleries.data" value="{{g.id}}">{{g.name}}</option>
+    </select>
+    <input type="submit" value="Удалить" (click)="onDeleteGallery()">
+</div>
+
+<div *ngIf="success">
+    <p class="alert alert-success" role="alert">{{success}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>
+
+<div *ngIf="gallery">
+    <!-- <p>id: {{gallery.id}}</p> -->
+    <p>Название галереи: {{gallery.data.name}}</p>
+    <p>Местонахождение: {{gallery.data.location}}</p>
+    <a href="{{gallery.data.link}}" target="_blank">Сайт галереи "{{gallery.data.name}}"</a>
+</div>

@@ -5,5 +5,6 @@ export interface Painter {
     birthDate: string
     placeOfBirth: string
     genre: string
+    style: string
     picFileName: string
 }

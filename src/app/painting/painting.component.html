@@ -1,0 +1,28 @@
+<div>
+    <label for="paintingID">Выберите картину для просмотра: </label>
+    <select name="paintingID" id="paintingID">
+        <option *ngFor="let p of paintings.data" value="{{p.id}}">{{p.nameOfPainting}}</option>
+    </select>
+    <input type="submit" value="Показать" (click)="onGetPainting()">
+</div>
+
+<div id="info" *ngIf="painting">
+    <!-- <p>id: {{painting.data.id}}</p> -->
+    <img *ngIf="painting.data.linkToImage" src="{{painting.data.linkToImage}}" alt="{{painting.data.nameOfPainting}}"
+        title="{{painting.data.nameOfPainting}}" loading="lazy" width="30%">
+    <p><b>Название картины:</b> {{painting.data.nameOfPainting}}</p>
+    <p><b>Год создания:</b> {{painting.data.yearOfPainting}}</p>
+    <p><b>Художник:</b> {{painter.data.name}} {{painter.data.surname}}</p>
+    <p *ngIf="painting.data.gallery_id"><b>Место хранения:</b> {{gallery.data.name}}; {{gallery.data.location}}; <a
+            href="{{gallery.data.link}}">ссылка на музей {{gallery.data.name}}</a></p>
+    <p><b>Вид искусства:</b> {{painting.data.art_form}}</p>
+    <p><b>Сюжет и объекты:</b> {{painting.data.plot}}</p>
+    <p><b>Стиль:</b> {{painting.data.style}}</p>
+    <p><b>Техника:</b> {{painting.data.technic}}</p>
+    <p><b>Материалы:</b> {{painting.data.materials}}</p>
+    <p *ngIf="painting.data.size"><b>Размер:</b> {{painting.data.size}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>

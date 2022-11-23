@@ -1,0 +1,44 @@
+<div>
+    <label for="name">Имя: </label>
+    <input id="name" type="text" placeholder="Имя">
+
+    <br>
+
+    <label for="surname">Фамилия: </label>
+    <input id="surname" type="text" placeholder="Фамилия">
+
+    <br>
+
+    <label for="birthDate">Дата рождения: </label>
+    <input id="birthDate" type="date" placeholder="Дата рождения">
+
+    <br>
+
+    <label for="placeOfBirth">Место рождения: </label>
+    <input id="placeOfBirth" type="text" placeholder="Место рождения">
+
+    <br>
+
+    <label for="genre">Жанр: </label>
+    <input id="genre" type="text" placeholder="Жанр">
+
+    <br>
+
+    <label for="style">Стиль: </label>
+    <input id="style" type="text" placeholder="Стиль">
+
+    <br>
+
+    <label for="picFileName">Ссылка на фото: </label>
+    <input id="picFileName" type="text" placeholder="Ссылка на фото">
+
+    <input type="submit" value="Внести" (click)="onCreatePainter()">
+</div>
+
+<div *ngIf="success">
+    <p class="alert alert-success" role="alert">{{success}}</p>
+</div>
+
+<div *ngIf="error">
+    <p class="alert alert-danger" role="alert">{{error.status}}, {{error.statusText}}</p>
+</div>
